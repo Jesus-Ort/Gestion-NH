@@ -1,36 +1,80 @@
-@import './base.css';
 @import "tailwindcss";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+@theme {
+    /* Primarios */
+    --color-medic-blue-50: #e8f0f8;
+    --color-medic-blue-100: #ccdef0;
+    --color-medic-blue-200: #99bee0;
+    --color-medic-blue-300: #679dd1;
+    --color-medic-blue-400: #397dbc;
+    --color-medic-blue-500: #2a5c8a;
+    --color-medic-blue-600: #21496d;
+    --color-medic-blue-700: #193752;
+    --color-medic-blue-800: #112437;
+    --color-medic-blue-900: #08121b;
+    --color-medic-blue-950: #050a10;
+
+    --color-medic-white-50: #ffffff;
+    --color-medic-white-100: #ffffff;
+    --color-medic-white-200: #fcfcfd;
+    --color-medic-white-300: #fcfcfd;
+    --color-medic-white-400: #f9fafb;
+    --color-medic-white-500: #f8f9fa;
+    --color-medic-white-600: #bec7d0;
+    --color-medic-white-700: #8596a8;
+    --color-medic-white-800: #536374;
+    --color-medic-white-900: #2a333c;
+    --color-medic-white-950: #151a1e;
+    /* Secundarios */
+    --color-medic-green-50: #edf7f4;
+    --color-medic-green-100: #dbf0ea;
+    --color-medic-green-200: #b8e0d5;
+    --color-medic-green-300: #94d1c0;
+    --color-medic-green-400: #6dc0a8;
+    --color-medic-green-500: #4caf93;
+    --color-medic-green-600: #3c8b74;
+    --color-medic-green-700: #2e6b5a;
+    --color-medic-green-800: #1f473c;
+    --color-medic-green-900: #0f241e;
+    --color-medic-green-950: #08120f;
+
+    --color-medic-gray-50: #f1f2f3;
+    --color-medic-gray-100: #e1e3e5;
+    --color-medic-gray-200: #c3c7cb;
+    --color-medic-gray-300: #a5abb1;
+    --color-medic-gray-400: #899299;
+    --color-medic-gray-500: #6c757d;
+    --color-medic-gray-600: #575f65;
+    --color-medic-gray-700: #40454a;
+    --color-medic-gray-800: #2b2e31;
+    --color-medic-gray-900: #151719;
+    --color-medic-gray-950: #0c0d0e;
+    /* Acentos */
+    --color-medic-red-50: #fbeaea;
+    --color-medic-red-100: #f6d5d5;
+    --color-medic-red-200: #edabab;
+    --color-medic-red-300: #e48181;
+    --color-medic-red-400: #db5757;
+    --color-medic-red-500: #d32f2f;
+    --color-medic-red-600: #a82424;
+    --color-medic-red-700: #7e1b1b;
+    --color-medic-red-800: #541212;
+    --color-medic-red-900: #2a0909;
+    --color-medic-red-950: #150404;
+
+    --color-medic-coral-50: #fff4f0;
+    --color-medic-coral-100: #ffe5db;
+    --color-medic-coral-200: #ffcbb8;
+    --color-medic-coral-300: #ffb094;
+    --color-medic-coral-400: #ff9a75;
+    --color-medic-coral-500: #ff7f50;
+    --color-medic-coral-600: #ff4f0f;
+    --color-medic-coral-700: #c73500;
+    --color-medic-coral-800: #852300;
+    --color-medic-coral-900: #421200;
+    --color-medic-coral-950: #240a00;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+*{
+    background-color: var(--color-medic-blue-400);
 }
