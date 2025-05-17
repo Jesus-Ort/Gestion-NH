@@ -75,6 +75,6 @@
     --color-medic-coral-950: #240a00;
 }
 
-*{
+body{
     background-color: var(--color-medic-blue-400);
 }
