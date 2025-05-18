@@ -53,7 +53,7 @@
                 <option value="BCG">BCG</option>
                 <option value="Hepatitis B">Hepatitis B</option>
                 <option value="Rotavirus">Rotavirus</option>
-                <option value="Penta Valiente">Penta Valiente</option>
+                <option value="Penta Valente">Penta Valente</option>
                 <option value="Polio Inactiva">Polio Inactiva</option>
                 <option value="Polio Oral">Polio Oral</option>
                 <option value="Polio">Polio</option>
