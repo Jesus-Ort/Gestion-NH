@@ -92,7 +92,7 @@
                 <option value="La Fortuna">La Fortuna</option>
             </select>
         </div>
-
+        <!-- Boton Enviar -->
         <div class="flex flex-col gap-1">
             <button class="bg-medic-green-700 text-xl
             cursor-pointer hover:scale-110 transition-all
