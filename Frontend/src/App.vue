@@ -1,12 +1,14 @@
 <template>
   <div class="min-h-screen bg-medic-green-900 text-medic-white-500">
-    <!-- Barra de navegación opcional -->
+    <!-- Barra de navegación -->
     <header v-if="showHeader" class="bg-medic-green-800/80 shadow-md">
-      <div class="container mx-auto px-4 py-3 flex justify-center items-center">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <h1>Sistema de Gestión de Vacunas Negra Hipolita</h1>
         <button 
-          v-if="isAuthenticated"
-          @click="logout"
-          class="bg-medic-red-700 rounded-md p-2 m-2 text-medic-red-200 hover:scale-110 transition-all flex items-center cursor-pointer"
+          v-if="isAuthenticated" @click="logout"
+          class="bg-medic-red-700 rounded-md p-2 m-2 
+        text-medic-red-200 hover:scale-110 transition-all 
+          flex items-center cursor-pointer"
         >
           Cerrar sesión
         </button>
@@ -15,6 +17,7 @@
 
     <!-- Contenedor principal de vistas -->
     <main class="container mx-auto">
+    <!-- Sistema de transicion para rutas -->
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
@@ -22,8 +25,8 @@
       </router-view>
     </main>
 
-    <!-- Pie de página opcional -->
-    <footer v-if="showFooter" class="bg-medic-green-800/80 py-4 mt-auto">
+    <!-- Pie de página -->
+    <footer v-if="showFooter" class="bg-medic-green-800/80 py-4 fixed w-screen h-12 bottom-0">
       <div class="container mx-auto px-4 text-center text-sm">
         <p>Sistema de Gestión de Vacunas Negra Hipolita</p>
       </div>
@@ -57,10 +60,12 @@ watch(() => route.path, () => {
   checkAuth();
 });
 
+// Función para verificar autenticación
 function checkAuth() {
   isAuthenticated.value = !!localStorage.getItem('authToken');
 }
 
+// Cerrar sesión
 function logout() {
   localStorage.removeItem('authToken');
   isAuthenticated.value = false;

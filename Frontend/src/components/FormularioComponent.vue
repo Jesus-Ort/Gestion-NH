@@ -1,6 +1,6 @@
 <template>
     <!-- Formulario para vacunar -->
-    <div v-if="isAuthenticated" class="bg-medic-green-700/40 mx-auto p-5 mt-10 
+    <div v-if="isAuthenticated" class="bg-medic-green-700/40 mx-auto p-5 mt-15
     border-2 border-medic-green-400 rounded-md flex flex-col gap-3 w-64 relative">
 
     <p class="text-medic-white-500 text-3xl">Formulario:</p>
@@ -113,12 +113,13 @@
     </div>
 
     </div>
-    
+
+    <!-- Si no tiene una sesión iniciada -->
     <div v-else class="bg-medic-green-700/40 mx-auto p-5 mt-10 
     border-2 border-medic-green-400 rounded-md flex flex-col gap-3 w-64 text-medic-white-500 text-center">
         <p>Debes iniciar sesión para acceder al formulario</p>
         <button @click="goToLogin" class="bg-medic-green-700 py-2 rounded hover:bg-medic-green-600">
-            Ir a inicio de sesión
+            Ir a iniciar sesión
         </button>
     </div>
 </template>
@@ -132,7 +133,11 @@ const router = useRouter();
 
 // Estado de autenticación
 const isAuthenticated = ref(false);
+
+// Estado de carga para el botón
 const loading = ref(false);
+
+// Mensajes de éxito y error
 const successMessage = ref('');
 const errorMessage = ref('');
 
@@ -150,8 +155,8 @@ const form = ref({
 const cedulaError = ref('');
 const edadError = ref('');
 
-// URL para el backend Node.js
-const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+// Reemplaza con la URL de tu API de envio de formulario (submit)
+const apiSubmitUrl = import.meta.env.VITE_API_SUBMIT_URL;
 
 // Verificar autenticación al cargar el componente
 onMounted(() => {
@@ -217,22 +222,30 @@ const submitForm = async () => {
     return;
     }
 
+    // Estado de carga en true
     loading.value = true;
+
     // Enviar datos al backend
     try {
+
+        // Obtenemos el token de autenticación
     const token = localStorage.getItem('authToken');
     
+    // Realizamos POST a la API de envío de formulario
     const response = await axios.post(
-        `${backendUrl}/api/form/submit`,
+        `${apiSubmitUrl}`,
         form.value,
         {
         headers: {
             'Content-Type': 'application/json',
+
+            // Agregamos el token de autenticación
             'Authorization': `Bearer ${token}`
             }
         }
     );
-    
+
+    // Si la respuesta es exitosa, mostramos mensaje de éxito
     if (response.data.success) {
         successMessage.value = '¡Datos guardados correctamente!';
       // Resetear formulario después de 1.5 segundos
@@ -241,20 +254,30 @@ const submitForm = async () => {
             successMessage.value = '';
         }, 1500);
     }
+    // Si hay un error, mostramos mensaje de error
     } catch (error) {
         console.error('Error:', error);
     
+    // Manejo de errores 
     if (error.response) {
+
+        // Si el error es 401, redirigir a logout
         if (error.response.status === 401) {
             errorMessage.value = 'Sesión expirada. Por favor inicie sesión nuevamente.';
             setTimeout(logout, 2000);
-        } else {
+        } 
+        // Si el error es 400, mostrar mensaje específico
+        else {
             errorMessage.value = error.response.data.error || 'Error al guardar los datos';
         }
-    } else {
+    } 
+    // Si no hay respuesta del servidor
+    else {
         errorMessage.value = 'Error de conexión con el servidor';
     }
-    } finally {
+    } 
+    // Finalmente, cambiamos el estado de carga a false
+    finally {
         loading.value = false;
     }
 };

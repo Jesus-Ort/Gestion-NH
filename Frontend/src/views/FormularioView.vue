@@ -7,7 +7,7 @@
       <div v-if="!isAuthenticated" class="bg-medic-green-700/40 p-6 rounded-lg border-2 border-medic-green-400 text-medic-white-500 text-center">
         <p class="mb-4">Debes iniciar sesión para acceder al formulario</p>
         <button @click="goToLogin" class="bg-medic-green-700 px-4 py-2 rounded hover:bg-medic-green-600">
-          Ir a inicio de sesión
+          Ir a iniciar sesión
         </button>
       </div>
       
