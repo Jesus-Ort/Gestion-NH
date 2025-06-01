@@ -1,0 +1,3 @@
+{
+    "rewrites": [{ "source": "/api/(.*)", "destination": "https://gestion-nh-1.onrender.com/api" }]
+}
