@@ -118,7 +118,9 @@
     <div v-else class="bg-medic-green-700/40 mx-auto p-5 mt-10 
     border-2 border-medic-green-400 rounded-md flex flex-col gap-3 w-64 text-medic-white-500 text-center">
         <p>Debes iniciar sesión para acceder al formulario</p>
-        <button @click="goToLogin" class="bg-medic-green-700 py-2 rounded hover:bg-medic-green-600">
+        <button @click="goToLogin" class="bg-medic-green-700 text-xl
+        cursor-pointer hover:scale-110 transition-all
+        w-12/12 m-auto text-medic-white-500 py-2 rounded">
             Ir a iniciar sesión
         </button>
     </div>
