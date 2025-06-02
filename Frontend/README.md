@@ -44,11 +44,11 @@ El sistema permite:
 
 ```mermaid
 graph TD
-    A[Usuario] -->|Navegador| B[Frontend (Vue)]
-    B -->|API REST| C[Backend (Express)]
+    A[Usuario] -->|Navegador| B[Frontend Vue]
+    B -->|API REST| C[Backend Express]
     C -->|HTTP POST| D[Google Apps Script]
     D -->|Registra| E[Google Sheets]
-    C --> F[users.json]
+    C -->|Lee/Escribe| F[users.json]
 ```
 
 ### 2. Flujo de Autenticación
