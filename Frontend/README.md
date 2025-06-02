@@ -118,7 +118,6 @@ sequenceDiagram
     ```
 3. **Configura el archivo `.env`:**
     ```
-    VITE_GOOGLE_SCRIPT_URL=tu_google_script_url
     VITE_API_LOGIN_URL=tu_api_login_url
     VITE_API_SUBMIT_URL=tu_api_submit_url
     ```
@@ -144,7 +143,6 @@ sequenceDiagram
 - `GOOGLE_SCRIPT_URL`: URL del Google Apps Script.
 
 ### Frontend (`Frontend/.env`)
-- `VITE_GOOGLE_SCRIPT_URL`: URL del Google Apps Script.
 - `VITE_API_LOGIN_URL`: Endpoint de login del backend.
 - `VITE_API_SUBMIT_URL`: Endpoint de envío de formulario.
 
