@@ -150,7 +150,7 @@ sequenceDiagram
 
 ## Licencia
 
-MIT
+------
 
 ---
 
