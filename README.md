@@ -40,7 +40,7 @@ El sistema permite:
 
 ## Diagramas
 
-### 1. Diagrama de Componentes
+### 1. Diagrama General
 
 ```mermaid
 graph TD
@@ -150,7 +150,7 @@ sequenceDiagram
 
 ## Licencia
 
-MIT
+------
 
 ---
 
