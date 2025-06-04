@@ -20,7 +20,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import VaccineForm from '@/components/FormularioComponent.vue';
+import VaccineForm from '@/components/Formulario.vue';
 
 const router = useRouter();
 const isAuthenticated = ref(false);
